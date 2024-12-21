@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'viewmodel.dart';
+import 'view_model.dart';
 import 'model.dart';
 
 void main() {
@@ -31,7 +31,7 @@ class MyApp extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               TextField(model: state),
-              CalculatorKeyPad(viewmodel: viewModel)
+              CalculatorKeyPad(viewModel: viewModel)
             ],
           ),
         ));
@@ -60,8 +60,8 @@ class _TextFieldState extends State<TextField> {
 }
 
 class CalculatorKeyPad extends StatelessWidget {
-  final Viewmodel viewmodel;
-  const CalculatorKeyPad({super.key, required this.viewmodel});
+  final ViewModel viewModel;
+  const CalculatorKeyPad({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +77,12 @@ class CalculatorKeyPad extends StatelessWidget {
                     flex: 3,
                     color: Colors.grey,
                     text: "AC",
-                    onPressed: () => viewmodel.clear()),
+                    onPressed: () => viewModel.clear()),
                 buildExpanded(
                     flex: 1,
                     color: Colors.orange,
                     text: "÷",
-                    onPressed: () => viewmodel.setOperator("÷")),
+                    onPressed: () => viewModel.setOperator("÷")),
               ],
             )),
             Expanded(
@@ -93,22 +93,22 @@ class CalculatorKeyPad extends StatelessWidget {
                     flex: 1,
                     color: Colors.grey,
                     text: "7",
-                    onPressed: () => viewmodel.enterNumber("7")),
+                    onPressed: () => viewModel.enterNumber("7")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "8",
-                    onPressed: () => viewmodel.enterNumber("8")),
+                    onPressed: () => viewModel.enterNumber("8")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "9",
-                    onPressed: () => viewmodel.enterNumber("9")),
+                    onPressed: () => viewModel.enterNumber("9")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.orange,
                     text: "*",
-                    onPressed: () => viewmodel.setOperator("*")),
+                    onPressed: () => viewModel.setOperator("*")),
               ],
             )),
             Expanded(
@@ -119,22 +119,22 @@ class CalculatorKeyPad extends StatelessWidget {
                     flex: 1,
                     color: Colors.grey,
                     text: "4",
-                    onPressed: () => viewmodel.enterNumber("4")),
+                    onPressed: () => viewModel.enterNumber("4")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "5",
-                    onPressed: () => viewmodel.enterNumber("5")),
+                    onPressed: () => viewModel.enterNumber("5")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "6",
-                    onPressed: () => viewmodel.enterNumber("6")),
+                    onPressed: () => viewModel.enterNumber("6")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.orange,
                     text: "-",
-                    onPressed: () => viewmodel.setOperator("-")),
+                    onPressed: () => viewModel.setOperator("-")),
               ],
             )),
             Expanded(
@@ -145,22 +145,22 @@ class CalculatorKeyPad extends StatelessWidget {
                     flex: 1,
                     color: Colors.grey,
                     text: "1",
-                    onPressed: () => viewmodel.enterNumber("1")),
+                    onPressed: () => viewModel.enterNumber("1")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "2",
-                    onPressed: () => viewmodel.enterNumber("2")),
+                    onPressed: () => viewModel.enterNumber("2")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "3",
-                    onPressed: () => viewmodel.enterNumber("3")),
+                    onPressed: () => viewModel.enterNumber("3")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.orange,
                     text: "+",
-                    onPressed: () => viewmodel.setOperator("+")),
+                    onPressed: () => viewModel.setOperator("+")),
               ],
             )),
             Expanded(
@@ -171,17 +171,17 @@ class CalculatorKeyPad extends StatelessWidget {
                     flex: 1,
                     color: Colors.grey,
                     text: "00",
-                    onPressed: () => viewmodel.enterNumber("00")),
+                    onPressed: () => viewModel.enterNumber("00")),
                 buildExpanded(
                     flex: 1,
                     color: Colors.grey,
                     text: "0",
-                    onPressed: () => viewmodel.enterNumber("0")),
+                    onPressed: () => viewModel.enterNumber("0")),
                 buildExpanded(
                     flex: 2,
                     color: Colors.orange,
                     text: "=",
-                    onPressed: () => viewmodel.calulataor()),
+                    onPressed: () => viewModel.calulataor()),
               ],
             )),
           ],

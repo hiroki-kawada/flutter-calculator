@@ -6,13 +6,13 @@ import 'model.dart';
 // StateNotifierProvider<状態を操作するclass, データclass>
 // return 状態を操作するclass
 final viewModelProvider =
-    StateNotifierProvider<Viewmodel, Model>((ref) => Viewmodel());
+    StateNotifierProvider<ViewModel, Model>((ref) => ViewModel());
 
 // StateNotifierを継承したクラス
 // 「Model」データクラスの値の状態を操作するクラス
-class Viewmodel extends StateNotifier<Model> {
+class ViewModel extends StateNotifier<Model> {
   // 初期化
-  Viewmodel() : super(Model.initial());
+  ViewModel() : super(Model.initial());
 
   // 数値が入力された時の処理
   void enterNumber(String number) {
